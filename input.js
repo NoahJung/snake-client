@@ -29,6 +29,14 @@ const setupInput = function(conn) {
       console.log("left");
       connection.write('Move: left');
     }
+    if (key === 'h') {
+      console.log("hello");
+      connection.write('Say: Hello World');
+    }
+    if (key === 'b') {
+      console.log("I am back");
+      connection.write('Say: I am back');
+    }
   });
  
 
