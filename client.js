@@ -16,8 +16,9 @@
   });
   
   conn.on('connect', () => {
+    console.log("Successfully connected to game server" );
     conn.write('Hello from client Noah!');
-  
+    conn.write('Name: MJJ');
   });
 
   return conn;
