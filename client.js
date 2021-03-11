@@ -5,8 +5,8 @@
 
  const connect = function() {
   const conn = net.createConnection({ 
-    host: '135.23.222.131',
-    port: 50542
+    host: 'localhost',
+    port: 50541
   });
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
@@ -37,23 +37,6 @@
   return conn;
  }
 
- const setupInput = function() {
-  const stdin = process.stdin;
 
-  stdin.setRawMode(true);
-  stdin.setEncoding('utf8');
-  stdin.resume();
-  const handleUserInput = stdin.on('data', (key) => {
-    if (key === '\u0003') {
-      console.log("exiting");
-      process.exit();
-    }
-  });
- 
 
-  return stdin;
-}
-
-module.exports = { 
-  connect, 
-  setupInput };
+module.exports = { connect };
